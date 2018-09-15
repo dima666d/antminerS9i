@@ -42,15 +42,19 @@ if [[ $ITEM == "discovery"* ]]; then
     if test -f "$FILE"; then
 	if [ "$ITEM" = "discoveryACN" ] && [ "$COMMAND" = "stats" ]; then
 	    ITEMS=`cat $FILE | grep --text "chain_acn"| sed s/chain_acn//g | grep --text -v "=0$" |cut -d"=" -f1`
+	    M=ACN
 	fi
 	if [ "$ITEM" = "discoveryFAN" ] && [ "$COMMAND" = "stats" ]; then
     	    ITEMS=`cat $FILE | grep --text "fan"| grep --text -v "num" | sed s/fan//g | grep --text -v "=0$" |cut -d"=" -f1`
+	    M=FAN
 	fi
 	if [ "$ITEM" = "discoveryTEMP" ] && [ "$COMMAND" = "stats" ]; then
 	    ITEMS=`cat $FILE | grep --text "temp"| grep --text -v "_" | sed s/temp//g | grep --text -v "=0$" |cut -d"=" -f1`
+	    M=TEMP
 	fi
 	if [ "$ITEM" = "discovery" ] && [ "$COMMAND" = "pools" ]; then
 	    ITEMS=`cat $FILE | grep --text "POOL" | sed s/POOL//g |cut -d"=" -f1`
+	    M=POOL
 	fi
 	if [[ -n ${ITEMS} ]]; then
 	    JSON="{ \"data\":["
@@ -61,7 +65,7 @@ if [[ $ITEM == "discovery"* ]]; then
 		    JSON=${JSON}","
 		fi
 		flag=$flag+1
-		JSON=${JSON}"{ \"{#ACN}\":\"${ITEM}\"}"
+		JSON=${JSON}"{ \"{#${M}}\":\"${ITEM}\"}"
 	    done
 	    JSON=${JSON}"]}"
 	    echo ${JSON}	
