@@ -39,7 +39,6 @@ if [ "$ITEM" = "When" ]; then
 fi
 
 if [[ $ITEM == "discovery"* ]]; then
-echo $ITEM
     if test -f "$FILE"; then
 	if [ "$ITEM" = "discoveryACN" ] && [ "$COMMAND" = "stats" ]; then
 	    ITEMS=`cat $FILE | grep --text "chain_acn"| sed s/chain_acn//g | grep --text -v "=0$" |cut -d"=" -f1`
