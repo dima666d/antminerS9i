@@ -38,9 +38,21 @@ if [ "$ITEM" = "When" ]; then
     chown zabbix:zabbix ${FILE}
 fi
 
-if [ "$ITEM" = "discoveryACN" ] && [ "$COMMAND" = "stats" ]; then
+if [[ $ITEM == "discovery"* ]]; then
+echo $ITEM
     if test -f "$FILE"; then
-	ITEMS=`cat $FILE | grep --text "chain_acn"| sed s/chain_acn//g | grep --text -v "=0$" |cut -d"=" -f1`
+	if [ "$ITEM" = "discoveryACN" ] && [ "$COMMAND" = "stats" ]; then
+	    ITEMS=`cat $FILE | grep --text "chain_acn"| sed s/chain_acn//g | grep --text -v "=0$" |cut -d"=" -f1`
+	fi
+	if [ "$ITEM" = "discoveryFAN" ] && [ "$COMMAND" = "stats" ]; then
+    	    ITEMS=`cat $FILE | grep --text "fan"| grep --text -v "num" | sed s/fan//g | grep --text -v "=0$" |cut -d"=" -f1`
+	fi
+	if [ "$ITEM" = "discoveryTEMP" ] && [ "$COMMAND" = "stats" ]; then
+	    ITEMS=`cat $FILE | grep --text "temp"| grep --text -v "_" | sed s/temp//g | grep --text -v "=0$" |cut -d"=" -f1`
+	fi
+	if [ "$ITEM" = "discovery" ] && [ "$COMMAND" = "pools" ]; then
+	    ITEMS=`cat $FILE | grep --text "POOL" | sed s/POOL//g |cut -d"=" -f1`
+	fi
 	if [[ -n ${ITEMS} ]]; then
 	    JSON="{ \"data\":["
 	    flag=0
@@ -56,67 +68,7 @@ if [ "$ITEM" = "discoveryACN" ] && [ "$COMMAND" = "stats" ]; then
 	    echo ${JSON}	
 	fi
 	exit
-    fi	
-fi
-if [ "$ITEM" = "discoveryFAN" ] && [ "$COMMAND" = "stats" ]; then
-    if test -f "$FILE"; then
-	ITEMS=`cat $FILE | grep --text "fan"| grep --text -v "num" | sed s/fan//g | grep --text -v "=0$" |cut -d"=" -f1`
-	if [[ -n ${ITEMS} ]]; then
-	    JSON="{ \"data\":["
-	    flag=0
-	    for ITEM in ${ITEMS}; do
-	        printf "%g" "$ITEM" &> /dev/null || exit
-	    	if [ $flag != 0 ]; then
-		    JSON=${JSON}","
-		fi
-		flag=$flag+1
-		JSON=${JSON}"{ \"{#FAN}\":\"${ITEM}\"}"
-	    done
-	    JSON=${JSON}"]}"
-	    echo ${JSON}	
-	fi
-	exit
-    fi	
-fi
-if [ "$ITEM" = "discoveryTEMP" ] && [ "$COMMAND" = "stats" ]; then
-    if test -f "$FILE"; then
-	ITEMS=`cat $FILE | grep --text "temp"| grep --text -v "_" | sed s/temp//g | grep --text -v "=0$" |cut -d"=" -f1`
-	if [[ -n ${ITEMS} ]]; then
-	    JSON="{ \"data\":["
-	    flag=0
-	    for ITEM in ${ITEMS}; do
-	        printf "%g" "$ITEM" &> /dev/null || exit
-	    	if [ $flag != 0 ]; then
-		    JSON=${JSON}","
-		fi
-		flag=$flag+1
-		JSON=${JSON}"{ \"{#TEMP}\":\"${ITEM}\"}"
-	    done
-	    JSON=${JSON}"]}"
-	    echo ${JSON}	
-	fi
-	exit
-    fi	
-fi
-if [ "$ITEM" = "discovery" ] && [ "$COMMAND" = "pools" ]; then
-    if test -f "$FILE"; then
-	ITEMS=`cat $FILE | grep --text "POOL" | sed s/POOL//g |cut -d"=" -f1`
-	if [[ -n ${ITEMS} ]]; then
-	    JSON="{ \"data\":["
-	    flag=0
-	    for ITEM in ${ITEMS}; do
-	        printf "%g" "$ITEM" &> /dev/null || exit
-	    	if [ $flag != 0 ]; then
-		    JSON=${JSON}","
-		fi
-		flag=$flag+1
-		JSON=${JSON}"{ \"{#POOL}\":\"${ITEM}\"}"
-	    done
-	    JSON=${JSON}"]}"
-	    echo ${JSON}	
-	fi
-	exit
-    fi	
+    fi
 fi
 
 RES=`find $FILE -mmin -$TIMEUPDATE -exec sh -c "grep $ITEM '{}' | wc -l"  \; 2>/dev/null`;
