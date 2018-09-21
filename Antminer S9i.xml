@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2018-09-15T01:11:37Z</date>
+    <date>2018-09-21T18:05:39Z</date>
     <groups>
         <group>
             <name>ASIC</name>
@@ -3714,7 +3714,18 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                             <description/>
                             <type>0</type>
                             <manual_close>0</manual_close>
-                            <dependencies/>
+                            <dependencies>
+                                <dependency>
+                                    <name>{HOST.NAME} S9 STATS BMMINER has no data</name>
+                                    <expression>{Antminer S9i:S9i.info.sh[stats,{HOST.IP},When,{$S9_PORT}].nodata(300)}=1</expression>
+                                    <recovery_expression/>
+                                </dependency>
+                                <dependency>
+                                    <name>{HOST.NAME} S9 STATS BMMINER response is not successful</name>
+                                    <expression>{Antminer S9i:S9i.info.sh[stats,{HOST.IP},STATUS,{$S9_PORT}].str(S)}=0</expression>
+                                    <recovery_expression/>
+                                </dependency>
+                            </dependencies>
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
@@ -3734,7 +3745,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Antminer S9i:S9i.info.sh[stats,{HOST.IP},chain_acs{#ACN},{$S9_PORT}].diff()}&lt;&gt;0</expression>
+                            <expression>{Antminer S9i:S9i.info.sh[stats,{HOST.IP},chain_acs{#ACN},{$S9_PORT}].diff()}&lt;&gt;0 and {Antminer S9i:S9i.info.sh[stats,{HOST.IP},chain_acs{#ACN},{$S9_PORT}].strlen()}&lt;&gt;0 and  {Antminer S9i:S9i.info.sh[stats,{HOST.IP},chain_acs{#ACN},{$S9_PORT}].strlen(#2)}&lt;&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{HOST.NAME} S9 STATS BMMINER N {#ACN} has problem with cipsets</name>
@@ -3746,7 +3757,18 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                             <description/>
                             <type>0</type>
                             <manual_close>0</manual_close>
-                            <dependencies/>
+                            <dependencies>
+                                <dependency>
+                                    <name>{HOST.NAME} S9 POOLS BMMINER has no data</name>
+                                    <expression>{Antminer S9i:S9i.info.sh[pools,{HOST.IP},When,{$S9_PORT}].nodata(300)}=1</expression>
+                                    <recovery_expression/>
+                                </dependency>
+                                <dependency>
+                                    <name>{HOST.NAME} S9 STATS BMMINER response is not successful</name>
+                                    <expression>{Antminer S9i:S9i.info.sh[stats,{HOST.IP},STATUS,{$S9_PORT}].str(S)}=0</expression>
+                                    <recovery_expression/>
+                                </dependency>
+                            </dependencies>
                             <tags/>
                         </trigger_prototype>
                     </trigger_prototypes>
