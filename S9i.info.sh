@@ -76,7 +76,7 @@ fi
 
 RES=`find $FILE -mmin -$TIMEUPDATE -exec sh -c "grep $ITEM '{}' | wc -l"  \; 2>/dev/null`;
 
-if [ "$RES" = "" ]; then echo ""; else echo `cat $FILE | grep --text "^$ITEM="| cut -d"=" -f2`; fi
+if [ "$RES" = "" ]; then echo "ZBX_NOTSUPPORTED"; else echo `cat $FILE | grep --text "^$ITEM="| cut -d"=" -f2`; fi
 
 exit
 
