@@ -2,6 +2,8 @@
 
 Just put "S9i.info.sh" file to the Zabbix ExternalScripts directory (/etc/zabbix/externalscripts by default).
 
+Antminer S9i.xml - zabbix template.
+
 Required utilites: nc, timeout, time.
 
 only bash, no perl, no python and no etc

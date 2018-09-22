@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2018-09-21T18:05:39Z</date>
+    <date>2018-09-22T01:56:20Z</date>
     <groups>
         <group>
             <name>ASIC</name>
@@ -3736,7 +3736,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                             <correlation_mode>0</correlation_mode>
                             <correlation_tag/>
                             <url/>
-                            <status>0</status>
+                            <status>1</status>
                             <priority>3</priority>
                             <description/>
                             <type>0</type>
@@ -4037,7 +4037,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                             <expression>{Antminer S9i:S9i.info.sh[stats,{HOST.IP},temp{#TEMP},{$S9_PORT}].last()}&gt;{$S9_TEMP}</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
-                            <name>{HOST.NAME} S9 N {#TEMP} more then {$S9_TEMP}C</name>
+                            <name>{HOST.NAME} S9 Temperature on N {#TEMP} more then {$S9_TEMP}C</name>
                             <correlation_mode>0</correlation_mode>
                             <correlation_tag/>
                             <url/>
@@ -4139,7 +4139,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
             <expression>{Antminer S9i:S9i.info.sh[stats,{HOST.IP},fan_num,{$S9_PORT}].diff()}&lt;&gt;0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>{HOST.NAME} S9 STATS BMMINER number of fan canged</name>
+            <name>{HOST.NAME} S9 STATS BMMINER number of fans changed</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -4155,7 +4155,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
             <expression>{Antminer S9i:S9i.info.sh[stats,{HOST.IP},miner_count,{$S9_PORT}].diff()}&lt;&gt;0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>{HOST.NAME} S9 STATS BMMINER number of miners canged</name>
+            <name>{HOST.NAME} S9 STATS BMMINER number of miners changed</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
