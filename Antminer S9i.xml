@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2018-09-22T01:56:20Z</date>
+    <date>2018-09-24T18:05:45Z</date>
     <groups>
         <group>
             <name>ASIC</name>
@@ -2678,7 +2678,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                             <type>10</type>
                             <snmp_community/>
                             <snmp_oid/>
-                            <key>S9i.info.sh[pools,{HOST.IP},Has GBT0{#POOL},{$S9_PORT}]</key>
+                            <key>S9i.info.sh[pools,{HOST.IP},Has GBT{#POOL},{$S9_PORT}]</key>
                             <delay>300s</delay>
                             <history>30d</history>
                             <trends>0</trends>
@@ -3306,7 +3306,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Antminer S9i:S9i.info.sh[pools,{HOST.IP},Status{#POOL},{$S9_PORT}].str(Alive)}=0</expression>
+                            <expression>{Antminer S9i:S9i.info.sh[pools,{HOST.IP},Status{#POOL},{$S9_PORT}].str(Alive)}=0 and {Antminer S9i:S9i.info.sh[pools,{HOST.IP},Status{#POOL},{$S9_PORT}].strlen()}&lt;&gt;0 and {Antminer S9i:S9i.info.sh[pools,{HOST.IP},Status{#POOL},{$S9_PORT}].strlen(#2)}&lt;&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{HOST.NAME} S9 Pool N {#POOL} is not Alive</name>
@@ -3322,7 +3322,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Antminer S9i:S9i.info.sh[pools,{HOST.IP},URL{#POOL},{$S9_PORT}].diff()}&gt;0</expression>
+                            <expression>{Antminer S9i:S9i.info.sh[pools,{HOST.IP},URL{#POOL},{$S9_PORT}].diff()}&gt;0 and {Antminer S9i:S9i.info.sh[pools,{HOST.IP},URL{#POOL},{$S9_PORT}].strlen()}&lt;&gt;0 and {Antminer S9i:S9i.info.sh[pools,{HOST.IP},URL{#POOL},{$S9_PORT}].strlen(#2)}&lt;&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{HOST.NAME} S9 URL N {#POOL}  was changed</name>
@@ -3338,7 +3338,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Antminer S9i:S9i.info.sh[pools,{HOST.IP},User{#POOL},{$S9_PORT}].diff()}&gt;0</expression>
+                            <expression>{Antminer S9i:S9i.info.sh[pools,{HOST.IP},User{#POOL},{$S9_PORT}].diff()}&gt;0 and {Antminer S9i:S9i.info.sh[pools,{HOST.IP},User{#POOL},{$S9_PORT}].strlen()}&lt;&gt;0 and {Antminer S9i:S9i.info.sh[pools,{HOST.IP},User{#POOL},{$S9_PORT}].strlen(#2)}&lt;&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{HOST.NAME} S9 User N {#POOL}  was changed</name>
@@ -3714,22 +3714,11 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                             <description/>
                             <type>0</type>
                             <manual_close>0</manual_close>
-                            <dependencies>
-                                <dependency>
-                                    <name>{HOST.NAME} S9 STATS BMMINER has no data</name>
-                                    <expression>{Antminer S9i:S9i.info.sh[stats,{HOST.IP},When,{$S9_PORT}].nodata(300)}=1</expression>
-                                    <recovery_expression/>
-                                </dependency>
-                                <dependency>
-                                    <name>{HOST.NAME} S9 STATS BMMINER response is not successful</name>
-                                    <expression>{Antminer S9i:S9i.info.sh[stats,{HOST.IP},STATUS,{$S9_PORT}].str(S)}=0</expression>
-                                    <recovery_expression/>
-                                </dependency>
-                            </dependencies>
+                            <dependencies/>
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Antminer S9i:S9i.info.sh[stats,{HOST.IP},chain_rate{#ACN},{$S9_PORT}].last()}&lt;{Antminer S9i:S9i.info.sh[stats,{HOST.IP},chain_rateideal{#ACN},{$S9_PORT}].last()}*0.9</expression>
+                            <expression>{Antminer S9i:S9i.info.sh[stats,{HOST.IP},chain_rate{#ACN},{$S9_PORT}].avg(#10)}&lt;{Antminer S9i:S9i.info.sh[stats,{HOST.IP},chain_rateideal{#ACN},{$S9_PORT}].last()}*0.9</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{HOST.NAME} S9 STATS BMMINER HASHRATE on N {#ACN} value is less than 10% of the ideal</name>
@@ -3757,18 +3746,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                             <description/>
                             <type>0</type>
                             <manual_close>0</manual_close>
-                            <dependencies>
-                                <dependency>
-                                    <name>{HOST.NAME} S9 POOLS BMMINER has no data</name>
-                                    <expression>{Antminer S9i:S9i.info.sh[pools,{HOST.IP},When,{$S9_PORT}].nodata(300)}=1</expression>
-                                    <recovery_expression/>
-                                </dependency>
-                                <dependency>
-                                    <name>{HOST.NAME} S9 STATS BMMINER response is not successful</name>
-                                    <expression>{Antminer S9i:S9i.info.sh[stats,{HOST.IP},STATUS,{$S9_PORT}].str(S)}=0</expression>
-                                    <recovery_expression/>
-                                </dependency>
-                            </dependencies>
+                            <dependencies/>
                             <tags/>
                         </trigger_prototype>
                     </trigger_prototypes>
@@ -4088,7 +4066,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Antminer S9i:S9i.info.sh[stats,{HOST.IP},total_rate,{$S9_PORT}].last()}&lt;{Antminer S9i:S9i.info.sh[stats,{HOST.IP},total_rateideal,{$S9_PORT}].last()}*0.9</expression>
+            <expression>{Antminer S9i:S9i.info.sh[stats,{HOST.IP},total_rate,{$S9_PORT}].avg(#10)}&lt;{Antminer S9i:S9i.info.sh[stats,{HOST.IP},total_rateideal,{$S9_PORT}].last()}*0.9</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>{HOST.NAME} S9 STATS BMMINER HASHRATE value is less than 10% of the ideal</name>
@@ -4232,7 +4210,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Antminer S9i:S9i.info.sh[version,{HOST.IP},BMMiner,{$S9_PORT}].diff()}&gt;0</expression>
+            <expression>{Antminer S9i:S9i.info.sh[version,{HOST.IP},BMMiner,{$S9_PORT}].diff()}&gt;0 and {Antminer S9i:S9i.info.sh[version,{HOST.IP},BMMiner,{$S9_PORT}].strlen()}&lt;&gt;0 and {Antminer S9i:S9i.info.sh[version,{HOST.IP},BMMiner,{$S9_PORT}].strlen(#2)}&lt;&gt;0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>{HOST.NAME} S9 VERSION BMMINER  was changed</name>
@@ -4248,7 +4226,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Antminer S9i:S9i.info.sh[version,{HOST.IP},CompileTime,{$S9_PORT}].diff()}&gt;0</expression>
+            <expression>{Antminer S9i:S9i.info.sh[version,{HOST.IP},CompileTime,{$S9_PORT}].diff()}&gt;0 and {Antminer S9i:S9i.info.sh[version,{HOST.IP},CompileTime,{$S9_PORT}].strlen()}&lt;&gt;0 and {Antminer S9i:S9i.info.sh[version,{HOST.IP},CompileTime,{$S9_PORT}].strlen(#2)}&lt;&gt;0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>{HOST.NAME} S9 VERSION FIRMWARE  was changed</name>
