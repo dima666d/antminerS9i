@@ -74,9 +74,9 @@ if [[ $ITEM == "discovery"* ]]; then
     fi
 fi
 
-RES=`find $FILE -mmin -$TIMEUPDATE -exec sh -c "grep $ITEM '{}' | wc -l"  \; 2>/dev/null`;
+RES=`find $FILE -mmin -$TIMEUPDATE -exec sh -c "grep \"$ITEM\" '{}' | wc -l"  \; 2>/dev/null`;
 
-if [ "$RES" = "" ]; then echo "ZBX_NOTSUPPORTED"; else echo `cat $FILE | grep --text "^$ITEM="| cut -d"=" -f2`; fi
+if [ "$RES" = "" ] || [ "$RES" -eq "0" ]; then exit 1; else echo `cat $FILE | grep --text "^$ITEM="| cut -d"=" -f2`; fi
 
 exit
 
