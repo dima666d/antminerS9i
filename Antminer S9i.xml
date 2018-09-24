@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2018-09-24T18:05:45Z</date>
+    <date>2018-09-24T18:08:40Z</date>
     <groups>
         <group>
             <name>ASIC</name>
@@ -2674,7 +2674,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Has GBT0{#POOL}</name>
+                            <name>Has GBT{#POOL}</name>
                             <type>10</type>
                             <snmp_community/>
                             <snmp_oid/>
