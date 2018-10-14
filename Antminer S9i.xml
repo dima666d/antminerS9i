@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2018-09-24T18:08:40Z</date>
+    <date>2018-10-14T18:10:03Z</date>
     <groups>
         <group>
             <name>ASIC</name>
@@ -141,7 +141,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[stats,{HOST.IP},Device Hardware%,{$S9_PORT}]</key>
-                    <delay>1m</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -392,7 +392,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[stats,{HOST.IP},no_matching_work,{$S9_PORT}]</key>
-                    <delay>1m</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -474,7 +474,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[stats,{HOST.IP},temp_max,{$S9_PORT}]</key>
-                    <delay>1m</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -817,7 +817,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Accepted,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -858,7 +858,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Best Share,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -899,7 +899,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Device Hardware%,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -940,7 +940,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Device Rejected%,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -981,7 +981,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Difficulty Accepted,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -1022,7 +1022,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Difficulty Rejected,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -1063,7 +1063,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Difficulty Stale,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -1104,7 +1104,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Discarded,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -1145,7 +1145,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Elapsed,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -1186,7 +1186,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Found Blocks,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -1227,7 +1227,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Get Failures,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -1268,7 +1268,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Getworks,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -1309,7 +1309,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},GHS 5s,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -1355,7 +1355,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},GHS av,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -1401,7 +1401,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Hardware Errors,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -1442,7 +1442,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Last getwork,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -1483,7 +1483,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Local Work,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -1524,7 +1524,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Network Blocks,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -1565,7 +1565,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Pool Rejected%,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -1606,7 +1606,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Pool Stale%,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -1647,7 +1647,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Rejected,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -1688,7 +1688,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Remote Failures,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -1729,7 +1729,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Stale,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -1811,13 +1811,13 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Total MH,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
-                    <units>H</units>
+                    <units>MH</units>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1842,12 +1842,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>1</type>
-                            <params>1000000</params>
-                        </step>
-                    </preprocessing>
+                    <preprocessing/>
                     <jmx_endpoint/>
                     <master_item/>
                 </item>
@@ -1857,7 +1852,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Utility,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -1939,7 +1934,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>S9i.info.sh[summary,{HOST.IP},Work Utility,{$S9_PORT}]</key>
-                    <delay>60s</delay>
+                    <delay>120s</delay>
                     <history>30d</history>
                     <trends>180d</trends>
                     <status>0</status>
@@ -4057,12 +4052,18 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
-            <status>0</status>
+            <status>1</status>
             <priority>3</priority>
             <description/>
             <type>0</type>
             <manual_close>0</manual_close>
-            <dependencies/>
+            <dependencies>
+                <dependency>
+                    <name>{HOST.NAME} S9 STATS BMMINER response is not successful</name>
+                    <expression>{Antminer S9i:S9i.info.sh[stats,{HOST.IP},STATUS,{$S9_PORT}].str(S)}=0</expression>
+                    <recovery_expression/>
+                </dependency>
+            </dependencies>
             <tags/>
         </trigger>
         <trigger>
@@ -4110,7 +4111,13 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
             <description/>
             <type>0</type>
             <manual_close>0</manual_close>
-            <dependencies/>
+            <dependencies>
+                <dependency>
+                    <name>{HOST.NAME} S9 STATS BMMINER response is not successful</name>
+                    <expression>{Antminer S9i:S9i.info.sh[stats,{HOST.IP},STATUS,{$S9_PORT}].str(S)}=0</expression>
+                    <recovery_expression/>
+                </dependency>
+            </dependencies>
             <tags/>
         </trigger>
         <trigger>
@@ -4185,12 +4192,18 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
-            <status>0</status>
+            <status>1</status>
             <priority>3</priority>
             <description/>
             <type>0</type>
             <manual_close>0</manual_close>
-            <dependencies/>
+            <dependencies>
+                <dependency>
+                    <name>{HOST.NAME} S9 STATS BMMINER response is not successful</name>
+                    <expression>{Antminer S9i:S9i.info.sh[stats,{HOST.IP},STATUS,{$S9_PORT}].str(S)}=0</expression>
+                    <recovery_expression/>
+                </dependency>
+            </dependencies>
             <tags/>
         </trigger>
         <trigger>
@@ -4249,12 +4262,18 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
-            <status>0</status>
+            <status>1</status>
             <priority>3</priority>
             <description/>
             <type>0</type>
             <manual_close>0</manual_close>
-            <dependencies/>
+            <dependencies>
+                <dependency>
+                    <name>{HOST.NAME} S9 STATS BMMINER response is not successful</name>
+                    <expression>{Antminer S9i:S9i.info.sh[stats,{HOST.IP},STATUS,{$S9_PORT}].str(S)}=0</expression>
+                    <recovery_expression/>
+                </dependency>
+            </dependencies>
             <tags/>
         </trigger>
     </triggers>
