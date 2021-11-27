@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2021-11-26T11:42:47Z</date>
+    <date>2021-11-27T13:57:43Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -926,7 +926,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     </master_item>
                     <triggers>
                         <trigger>
-                            <expression>{nodata(300)}=1</expression>
+                            <expression>{nodata(360)}=1</expression>
                             <name>{HOST.NAME} S9 S has no data</name>
                             <priority>AVERAGE</priority>
                         </trigger>
@@ -1272,6 +1272,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <name>S9_ACN</name>
                     <type>EXTERNAL</type>
                     <key>s9.disc.sh[stats,{HOST.IP},discoveryACN,{$PORT}]</key>
+                    <delay>15m</delay>
                     <item_prototypes>
                         <item_prototype>
                             <name>chain_acn{#ACN}</name>
@@ -1405,6 +1406,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <name>S9_FAN</name>
                     <type>EXTERNAL</type>
                     <key>s9.disc.sh[stats,{HOST.IP},discoveryFAN,{$PORT}]</key>
+                    <delay>15m</delay>
                     <item_prototypes>
                         <item_prototype>
                             <name>fan{#FAN}</name>
@@ -1439,6 +1441,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <name>S9_TEMP</name>
                     <type>EXTERNAL</type>
                     <key>s9.disc.sh[stats,{HOST.IP},discoveryTEMP,{$PORT}]</key>
+                    <delay>15m</delay>
                     <item_prototypes>
                         <item_prototype>
                             <name>temp_chip{#TEMP}_max</name>
@@ -1468,7 +1471,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                             <trigger_prototypes>
                                 <trigger_prototype>
                                     <expression>{last()}&gt;{$TEMP_MAX_MAX}</expression>
-                                    <name>{HOST.NAME} S9 max Temp on chip N{#TEMP} &gt;{$S9_TEMP}C</name>
+                                    <name>{HOST.NAME} S9 max Temp on chip N{#TEMP} &gt;{$TEMP_MAX_MAX}C</name>
                                     <priority>AVERAGE</priority>
                                 </trigger_prototype>
                             </trigger_prototypes>
@@ -1501,7 +1504,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                             <trigger_prototypes>
                                 <trigger_prototype>
                                     <expression>{last()}&gt;{$TEMP_MAX_MAX}</expression>
-                                    <name>{HOST.NAME} S9 max Temp on pcb N{#TEMP} &gt;{$S9_TEMP}C</name>
+                                    <name>{HOST.NAME} S9 max Temp on pcb N{#TEMP} &gt;{{$TEMP_MAX_MAX}C</name>
                                     <priority>AVERAGE</priority>
                                 </trigger_prototype>
                             </trigger_prototypes>
@@ -1581,7 +1584,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                             <trigger_prototypes>
                                 <trigger_prototype>
                                     <expression>{last()}&gt;{$TEMP_MAX_MAX}</expression>
-                                    <name>{HOST.NAME} S9 Temp2 on N{#TEMP} &gt;{$S9_TEMP}C</name>
+                                    <name>{HOST.NAME} S9 Temp2 on N{#TEMP} &gt;{$TEMP_MAX_MAX}C</name>
                                     <priority>HIGH</priority>
                                 </trigger_prototype>
                             </trigger_prototypes>
@@ -1591,6 +1594,8 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                             <type>DEPENDENT</type>
                             <key>temp3_[{#TEMP}]</key>
                             <delay>0</delay>
+                            <status>DISABLED</status>
+                            <discover>NO_DISCOVER</discover>
                             <units>C</units>
                             <applications>
                                 <application>
@@ -1630,7 +1635,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                             <trigger_prototypes>
                                 <trigger_prototype>
                                     <expression>{last()}&gt;{$TEMP_MAX_MAX}</expression>
-                                    <name>{HOST.NAME} S9 Temp on N{#TEMP} &gt;{$S9_TEMP}C</name>
+                                    <name>{HOST.NAME} S9 Temp on N{#TEMP} &gt;{$TEMP_MAX_MAX}C</name>
                                     <priority>HIGH</priority>
                                 </trigger_prototype>
                             </trigger_prototypes>
