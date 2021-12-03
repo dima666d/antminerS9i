@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2021-11-27T13:57:43Z</date>
+    <date>2021-12-03T20:11:42Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -242,6 +242,13 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <master_item>
                         <key>avalon.info.sh[stats,{HOST.IP}]</key>
                     </master_item>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&lt;{$REBOOT_TIME}</expression>
+                            <name>{HOST.NAME} S9 S restarted less then {$REBOOT_TIME} sec ago</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
                     <name>stats.fan_num</name>
@@ -929,11 +936,6 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                             <expression>{nodata(360)}=1</expression>
                             <name>{HOST.NAME} S9 S has no data</name>
                             <priority>AVERAGE</priority>
-                        </trigger>
-                        <trigger>
-                            <expression>{last()}&lt;{$REBOOT_TIME}</expression>
-                            <name>{HOST.NAME} S9 S restarted less then {$REBOOT_TIME} sec ago</name>
-                            <priority>HIGH</priority>
                         </trigger>
                     </triggers>
                 </item>
@@ -1719,7 +1721,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                 </macro>
                 <macro>
                     <macro>{$HR}</macro>
-                    <value>13T</value>
+                    <value>10T</value>
                     <description>min hashrate</description>
                 </macro>
                 <macro>
