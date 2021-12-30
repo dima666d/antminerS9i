@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2021-12-03T20:11:42Z</date>
+    <date>2021-12-30T10:39:34Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -51,61 +51,6 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
             </applications>
             <items>
                 <item>
-                    <name>pools</name>
-                    <type>EXTERNAL</type>
-                    <key>avalon.info.sh[pools,{HOST.IP}]</key>
-                    <delay>5m</delay>
-                    <history>10d</history>
-                    <trends>0</trends>
-                    <value_type>TEXT</value_type>
-                    <applications>
-                        <application>
-                            <name>S9 pools</name>
-                        </application>
-                    </applications>
-                </item>
-                <item>
-                    <name>stats</name>
-                    <type>EXTERNAL</type>
-                    <key>avalon.info.sh[stats,{HOST.IP}]</key>
-                    <history>10d</history>
-                    <trends>0</trends>
-                    <value_type>TEXT</value_type>
-                    <applications>
-                        <application>
-                            <name>S9 stats</name>
-                        </application>
-                    </applications>
-                </item>
-                <item>
-                    <name>summary</name>
-                    <type>EXTERNAL</type>
-                    <key>avalon.info.sh[summary,{HOST.IP}]</key>
-                    <delay>5m</delay>
-                    <history>10d</history>
-                    <trends>0</trends>
-                    <value_type>TEXT</value_type>
-                    <applications>
-                        <application>
-                            <name>S9 summary</name>
-                        </application>
-                    </applications>
-                </item>
-                <item>
-                    <name>version</name>
-                    <type>EXTERNAL</type>
-                    <key>avalon.info.sh[version,{HOST.IP}]</key>
-                    <delay>3h</delay>
-                    <history>10d</history>
-                    <trends>0</trends>
-                    <value_type>TEXT</value_type>
-                    <applications>
-                        <application>
-                            <name>S9 version</name>
-                        </application>
-                    </applications>
-                </item>
-                <item>
                     <name>CGMiner</name>
                     <type>DEPENDENT</type>
                     <key>CGMiner</key>
@@ -124,7 +69,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[version,{HOST.IP}]</key>
+                        <key>s9.info.sh[version,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -146,7 +91,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[version,{HOST.IP}]</key>
+                        <key>s9.info.sh[version,{HOST.IP}]</key>
                     </master_item>
                     <triggers>
                         <trigger>
@@ -175,7 +120,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[version,{HOST.IP}]</key>
+                        <key>s9.info.sh[version,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -197,8 +142,63 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                        <key>s9.info.sh[pools,{HOST.IP}]</key>
                     </master_item>
+                </item>
+                <item>
+                    <name>pools</name>
+                    <type>EXTERNAL</type>
+                    <key>s9.info.sh[pools,{HOST.IP}]</key>
+                    <delay>5m</delay>
+                    <history>10d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>S9 pools</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>stats</name>
+                    <type>EXTERNAL</type>
+                    <key>s9.info.sh[stats,{HOST.IP}]</key>
+                    <history>10d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>S9 stats</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>summary</name>
+                    <type>EXTERNAL</type>
+                    <key>s9.info.sh[summary,{HOST.IP}]</key>
+                    <delay>5m</delay>
+                    <history>10d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>S9 summary</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>version</name>
+                    <type>EXTERNAL</type>
+                    <key>s9.info.sh[version,{HOST.IP}]</key>
+                    <delay>3h</delay>
+                    <history>10d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>S9 version</name>
+                        </application>
+                    </applications>
                 </item>
                 <item>
                     <name>stats.DeviceHardwareProc</name>
@@ -219,7 +219,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                        <key>s9.info.sh[stats,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -227,7 +227,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <type>DEPENDENT</type>
                     <key>stats.Elapsed</key>
                     <delay>0</delay>
-                    <units>s</units>
+                    <units>uptime</units>
                     <applications>
                         <application>
                             <name>S9 stats</name>
@@ -240,7 +240,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                        <key>s9.info.sh[stats,{HOST.IP}]</key>
                     </master_item>
                     <triggers>
                         <trigger>
@@ -267,7 +267,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                        <key>s9.info.sh[stats,{HOST.IP}]</key>
                     </master_item>
                     <triggers>
                         <trigger>
@@ -299,7 +299,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                        <key>s9.info.sh[stats,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -324,7 +324,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                        <key>s9.info.sh[stats,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -344,7 +344,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                        <key>s9.info.sh[stats,{HOST.IP}]</key>
                     </master_item>
                     <triggers>
                         <trigger>
@@ -374,7 +374,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                        <key>s9.info.sh[stats,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -394,7 +394,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                        <key>s9.info.sh[stats,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -416,7 +416,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                        <key>s9.info.sh[stats,{HOST.IP}]</key>
                     </master_item>
                     <triggers>
                         <trigger>
@@ -444,7 +444,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                        <key>s9.info.sh[stats,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -464,7 +464,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                        <key>s9.info.sh[stats,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -484,7 +484,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                        <key>s9.info.sh[stats,{HOST.IP}]</key>
                     </master_item>
                     <triggers>
                         <trigger>
@@ -516,7 +516,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                        <key>s9.info.sh[stats,{HOST.IP}]</key>
                     </master_item>
                     <triggers>
                         <trigger>
@@ -548,7 +548,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                        <key>s9.info.sh[stats,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -569,7 +569,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                        <key>s9.info.sh[stats,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -589,7 +589,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[summary,{HOST.IP}]</key>
+                        <key>s9.info.sh[summary,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -609,7 +609,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[summary,{HOST.IP}]</key>
+                        <key>s9.info.sh[summary,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -617,7 +617,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <type>DEPENDENT</type>
                     <key>summary.Elapsed</key>
                     <delay>0</delay>
-                    <units>s</units>
+                    <units>uptime</units>
                     <applications>
                         <application>
                             <name>S9 summary</name>
@@ -630,11 +630,11 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[summary,{HOST.IP}]</key>
+                        <key>s9.info.sh[summary,{HOST.IP}]</key>
                     </master_item>
                     <triggers>
                         <trigger>
-                            <expression>{change()}&lt;0</expression>
+                            <expression>{change(0)}&lt;0</expression>
                             <name>{HOST.NAME} S9 S restarted</name>
                             <priority>HIGH</priority>
                         </trigger>
@@ -657,7 +657,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[summary,{HOST.IP}]</key>
+                        <key>s9.info.sh[summary,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -677,7 +677,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[summary,{HOST.IP}]</key>
+                        <key>s9.info.sh[summary,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -697,7 +697,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[summary,{HOST.IP}]</key>
+                        <key>s9.info.sh[summary,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -722,7 +722,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[summary,{HOST.IP}]</key>
+                        <key>s9.info.sh[summary,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -747,7 +747,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[summary,{HOST.IP}]</key>
+                        <key>s9.info.sh[summary,{HOST.IP}]</key>
                     </master_item>
                     <triggers>
                         <trigger>
@@ -779,12 +779,12 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[summary,{HOST.IP}]</key>
+                        <key>s9.info.sh[summary,{HOST.IP}]</key>
                     </master_item>
                     <triggers>
                         <trigger>
-                            <expression>{change()}&gt;100</expression>
-                            <name>{HOST.NAME} S9 HW errors grow!</name>
+                            <expression>{change()}&gt;{$ERRORS_NORMAL}</expression>
+                            <name>{HOST.NAME} S9 HW errors grow! &gt; {$ERRORS_NORMAL} errors</name>
                             <priority>WARNING</priority>
                         </trigger>
                     </triggers>
@@ -806,7 +806,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[summary,{HOST.IP}]</key>
+                        <key>s9.info.sh[summary,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -826,7 +826,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[summary,{HOST.IP}]</key>
+                        <key>s9.info.sh[summary,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -846,7 +846,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[summary,{HOST.IP}]</key>
+                        <key>s9.info.sh[summary,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -866,7 +866,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[summary,{HOST.IP}]</key>
+                        <key>s9.info.sh[summary,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -886,7 +886,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[summary,{HOST.IP}]</key>
+                        <key>s9.info.sh[summary,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -908,7 +908,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[summary,{HOST.IP}]</key>
+                        <key>s9.info.sh[summary,{HOST.IP}]</key>
                     </master_item>
                 </item>
                 <item>
@@ -929,7 +929,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>avalon.info.sh[summary,{HOST.IP}]</key>
+                        <key>s9.info.sh[summary,{HOST.IP}]</key>
                     </master_item>
                     <triggers>
                         <trigger>
@@ -964,7 +964,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                                <key>s9.info.sh[pools,{HOST.IP}]</key>
                             </master_item>
                         </item_prototype>
                         <item_prototype>
@@ -984,7 +984,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                                <key>s9.info.sh[pools,{HOST.IP}]</key>
                             </master_item>
                         </item_prototype>
                         <item_prototype>
@@ -1004,7 +1004,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                                <key>s9.info.sh[pools,{HOST.IP}]</key>
                             </master_item>
                         </item_prototype>
                         <item_prototype>
@@ -1024,7 +1024,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                                <key>s9.info.sh[pools,{HOST.IP}]</key>
                             </master_item>
                         </item_prototype>
                         <item_prototype>
@@ -1046,7 +1046,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                                <key>s9.info.sh[pools,{HOST.IP}]</key>
                             </master_item>
                         </item_prototype>
                         <item_prototype>
@@ -1068,7 +1068,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                                <key>s9.info.sh[pools,{HOST.IP}]</key>
                             </master_item>
                         </item_prototype>
                         <item_prototype>
@@ -1088,7 +1088,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                                <key>s9.info.sh[pools,{HOST.IP}]</key>
                             </master_item>
                         </item_prototype>
                         <item_prototype>
@@ -1108,7 +1108,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                                <key>s9.info.sh[pools,{HOST.IP}]</key>
                             </master_item>
                         </item_prototype>
                         <item_prototype>
@@ -1130,7 +1130,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                                <key>s9.info.sh[pools,{HOST.IP}]</key>
                             </master_item>
                             <trigger_prototypes>
                                 <trigger_prototype>
@@ -1159,7 +1159,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                                <key>s9.info.sh[pools,{HOST.IP}]</key>
                             </master_item>
                             <trigger_prototypes>
                                 <trigger_prototype>
@@ -1188,7 +1188,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                                <key>s9.info.sh[pools,{HOST.IP}]</key>
                             </master_item>
                             <trigger_prototypes>
                                 <trigger_prototype>
@@ -1255,7 +1255,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </graph_prototype>
                     </graph_prototypes>
                     <master_item>
-                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                        <key>s9.info.sh[pools,{HOST.IP}]</key>
                     </master_item>
                     <lld_macro_paths>
                         <lld_macro_path>
@@ -1275,6 +1275,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <type>EXTERNAL</type>
                     <key>s9.disc.sh[stats,{HOST.IP},discoveryACN,{$PORT}]</key>
                     <delay>15m</delay>
+                    <lifetime>10d</lifetime>
                     <item_prototypes>
                         <item_prototype>
                             <name>chain_acn{#ACN}</name>
@@ -1294,7 +1295,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                                <key>s9.info.sh[stats,{HOST.IP}]</key>
                             </master_item>
                             <trigger_prototypes>
                                 <trigger_prototype>
@@ -1324,7 +1325,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                                <key>s9.info.sh[stats,{HOST.IP}]</key>
                             </master_item>
                             <trigger_prototypes>
                                 <trigger_prototype>
@@ -1352,7 +1353,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                                <key>s9.info.sh[stats,{HOST.IP}]</key>
                             </master_item>
                         </item_prototype>
                         <item_prototype>
@@ -1378,7 +1379,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                                <key>s9.info.sh[stats,{HOST.IP}]</key>
                             </master_item>
                         </item_prototype>
                         <item_prototype>
@@ -1399,7 +1400,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                                <key>s9.info.sh[stats,{HOST.IP}]</key>
                             </master_item>
                         </item_prototype>
                     </item_prototypes>
@@ -1409,6 +1410,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <type>EXTERNAL</type>
                     <key>s9.disc.sh[stats,{HOST.IP},discoveryFAN,{$PORT}]</key>
                     <delay>15m</delay>
+                    <lifetime>10d</lifetime>
                     <item_prototypes>
                         <item_prototype>
                             <name>fan{#FAN}</name>
@@ -1427,7 +1429,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                                <key>s9.info.sh[stats,{HOST.IP}]</key>
                             </master_item>
                             <trigger_prototypes>
                                 <trigger_prototype>
@@ -1444,6 +1446,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                     <type>EXTERNAL</type>
                     <key>s9.disc.sh[stats,{HOST.IP},discoveryTEMP,{$PORT}]</key>
                     <delay>15m</delay>
+                    <lifetime>10d</lifetime>
                     <item_prototypes>
                         <item_prototype>
                             <name>temp_chip{#TEMP}_max</name>
@@ -1468,11 +1471,13 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                                <key>s9.info.sh[stats,{HOST.IP}]</key>
                             </master_item>
                             <trigger_prototypes>
                                 <trigger_prototype>
                                     <expression>{last()}&gt;{$TEMP_MAX_MAX}</expression>
+                                    <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
+                                    <recovery_expression>{last()}&lt;({$TEMP_MAX_MAX}-2)</recovery_expression>
                                     <name>{HOST.NAME} S9 max Temp on chip N{#TEMP} &gt;{$TEMP_MAX_MAX}C</name>
                                     <priority>AVERAGE</priority>
                                 </trigger_prototype>
@@ -1501,7 +1506,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                                <key>s9.info.sh[stats,{HOST.IP}]</key>
                             </master_item>
                             <trigger_prototypes>
                                 <trigger_prototype>
@@ -1534,7 +1539,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                                <key>s9.info.sh[stats,{HOST.IP}]</key>
                             </master_item>
                         </item_prototype>
                         <item_prototype>
@@ -1560,7 +1565,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                                <key>s9.info.sh[stats,{HOST.IP}]</key>
                             </master_item>
                         </item_prototype>
                         <item_prototype>
@@ -1581,7 +1586,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                                <key>s9.info.sh[stats,{HOST.IP}]</key>
                             </master_item>
                             <trigger_prototypes>
                                 <trigger_prototype>
@@ -1611,7 +1616,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                                <key>s9.info.sh[stats,{HOST.IP}]</key>
                             </master_item>
                         </item_prototype>
                         <item_prototype>
@@ -1632,7 +1637,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                                 </step>
                             </preprocessing>
                             <master_item>
-                                <key>avalon.info.sh[stats,{HOST.IP}]</key>
+                                <key>s9.info.sh[stats,{HOST.IP}]</key>
                             </master_item>
                             <trigger_prototypes>
                                 <trigger_prototype>
@@ -1709,6 +1714,11 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                 </discovery_rule>
             </discovery_rules>
             <macros>
+                <macro>
+                    <macro>{$ERRORS_NORMAL}</macro>
+                    <value>300</value>
+                    <description>max HW errors in 1 min</description>
+                </macro>
                 <macro>
                     <macro>{$FAN_MIN}</macro>
                     <value>1000</value>
